@@ -34,3 +34,32 @@ var todoList = {
   deleteTodo: function(position, todoText) {
     this.todos.splice(position, 1);
     this.displayTodos();
+  },
+  toggleCompleted: function(position) {
+    var todo = this.todos[position];
+    todo.completed = !todo.completed;
+    this.displayTodos();
+  },
+  toggleAll: function() {
+    var totalTodos = this.todos.length;
+    var completedTodos = 0;
+    for (var i = 0; i < totalTodos; i++) {
+      if (this.todos[i].completed === true) {
+        completedTodos++;
+      }
+    }
+
+    if (completedTodos === totalTodos) {
+      for (var j = 0; j < totalTodos; j++) {
+        this.todos[j].completed = false;
+      }
+    } else {
+      for (var k = 0; k < totalTodos; k++) {
+        this.todos[k].completed = true;
+      }
+    }
+    this.displayTodos();
+  }
+
+};
+
