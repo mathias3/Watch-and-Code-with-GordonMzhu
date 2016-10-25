@@ -75,7 +75,15 @@ addTodo: function(){
   var addTodoTextInput = document.getElementById('addTodoTextInput')
   todoList.addTodo(addTodoTextInput.value);
   addTodoTextInput.value = '';
+},
+changeTodo: function(){
+  var changeTodoPositionInput = document.getElementById("changeTodoPositionInput");
+  var changeTodoTextInput = document.getElementById("changeTodoTextInput");
+todoList.changeTodo(changeTodoPositionInput.valueAsNumber,changeTodoTextInput.value );
+changeTodoPositionInput.value = '';
+changeTodoTextInput.value = "";
 }
+} 
 }
 
 //'item 1', 'item 2','item 3'
