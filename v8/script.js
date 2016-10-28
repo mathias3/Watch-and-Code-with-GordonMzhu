@@ -82,6 +82,11 @@ changeTodo: function(){
 todoList.changeTodo(changeTodoPositionInput.valueAsNumber,changeTodoTextInput.value );
 changeTodoPositionInput.value = '';
 changeTodoTextInput.value = "";
+},
+  deleteTodo: function() {
+  var deleteTodoTextInput = document.getElementById("deleteTodoTextInput");
+  todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber );
+  changeTodoPositionInput.value = '';
 }
 } 
 }
