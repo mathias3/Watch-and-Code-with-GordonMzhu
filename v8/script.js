@@ -87,7 +87,12 @@ changeTodoTextInput.value = "";
   var deleteTodoTextInput = document.getElementById("deleteTodoTextInput");
   todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber );
   changeTodoPositionInput.value = '';
-}
+},
+  toggleCompleted: function() {
+   var toggleCompletedPositionInput = document.getElementById("toggleCompletedPositionInput");
+  todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
+  toggleCompletedPositionInput.value = '';
+},
 } 
 }
 
