@@ -1,24 +1,7 @@
+
 var todoList = {
   todos: [],
-  displayTodos: function() {
-
-
-    if (this.todos.length === 0) {
-      console.log("Your todo list is empty")
-    } else {
-      console.log("My Todos:");
-      for (var i = 0; i < this.todos.length; i++) {
-        console.log(this.todos[i].todoText);
-
-        if (this.todos[i].completed === true) {
-          console.log("(x)", this.todos[i].todoText);
-        } else {
-          console.log("( )", this.todos[i].todoText);
-        }
-      }
-
-    }
-  },
+  
   addTodo: function(todoText) {
     this.todos.push({
       todoText: todoText,
@@ -66,14 +49,13 @@ var todoList = {
 };
 
 var handlers = {
-  displayTodos: function() {
-    todoList.displayTodos();
-  },
+  
 
   addTodo: function() {
     var addTodoTextInput = document.getElementById('addTodoTextInput')
     todoList.addTodo(addTodoTextInput.value);
     addTodoTextInput.value = '';
+    view.displayTodos();
   },
   changeTodo: function() {
     var changeTodoPositionInput = document.getElementById("changeTodoPositionInput");
@@ -81,19 +63,23 @@ var handlers = {
     todoList.changeTodo(changeTodoPositionInput.valueAsNumber, changeTodoTextInput.value);
     changeTodoPositionInput.value = '';
     changeTodoTextInput.value = "";
+    view.displayTodos();
   },
   deleteTodo: function() {
     var deleteTodoTextInput = document.getElementById("deleteTodoTextInput");
     todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
     changeTodoPositionInput.value = '';
+    view.displayTodos();
   },
   toggleCompleted: function() {
     var toggleCompletedPositionInput = document.getElementById("toggleCompletedPositionInput");
     todoList.toggleCompleted(toggleCompletedPositionInput.valueAsNumber);
     toggleCompletedPositionInput.value = '';
+    view.displayTodos();
   },
   toggleAll: function() {
     todoList.toggleAll();
+    view.displayTodos();
   }
 };
 var view = {
@@ -109,7 +95,7 @@ var view = {
         todoTextWithCompletion = '(x) ' + todo.todoText;
       }
       else {
-        todoTextWithCompletion = '(x) ' + todo.todoText;
+        todoTextWithCompletion = '() ' + todo.todoText;
       }
       
       
@@ -118,5 +104,3 @@ var view = {
     }
   }
 };
-
-//'item 1', 'item 2','item 3'
