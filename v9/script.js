@@ -32,6 +32,7 @@ var todoList = {
     this.todos[position].todoText = todoText;
     this.displayTodos();
   },
+  
   deleteTodo: function(position, todoText) {
     this.todos.splice(position, 1);
     this.displayTodos();
