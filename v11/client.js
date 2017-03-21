@@ -142,5 +142,6 @@ todosUl.addEventListener('click', function(event){
   });
   }
 
+  
 };
 view.setupEventListeners();
