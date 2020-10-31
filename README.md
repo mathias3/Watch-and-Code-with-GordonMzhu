@@ -8,3 +8,5 @@ Version 10:
 Version 11:
 -todoList.toggleAll should use forEach
 -view.displayTodos should use forEach
+
+### repo not maintained
